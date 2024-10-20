@@ -1,0 +1,1111 @@
+ 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Д панорама корпуса Б МИСИС</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 800px;
+        height: 600px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "floor6",
+        "author": "Дарина Петухова",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "floor6": {
+            "title": "Этаж 6",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "type": "equirectangular",
+            "panorama": "./buffer/image-20241016-175113-f99b71ca.png",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 85,
+                    "type": "scene",
+                    "text": "Крыло младших классов",
+                    "sceneId": "move_to_nikita_01"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 5,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "hall",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 310,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 265,
+                    "type": "scene",
+                    "text": "Церковь",
+                    "sceneId": "tserchov",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "move_to_nikita_01": {
+            "title": "Крыло младших классов",
+            "type": "equirectangular",
+            "panorama": "./images/детскоекрыло.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                {
+                    "pitch": -7,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Спуск к отелю Никита",
+                    "sceneId": "move_to_nikita_02",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "tserchov": {
+            "title": "Церковь",
+            "type": "equirectangular",
+            "panorama": "./images/церковь.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 2,
+                    "yaw": -14,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "suvorova1": {
+            "title": "Улица Суворова (1)",
+            "type": "equirectangular",
+            "panorama": "./images/levo1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 87,
+                    "type": "scene",
+                    "text": "Церковь",
+                    "sceneId": "tserchov",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 67,
+                    "type": "scene",
+                    "text": "",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 3,
+                    "yaw": -84,
+                    "type": "scene",
+                    "text": "Улица Суворова (2)",
+                    "sceneId": "suvorova2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+             ]
+        },
+        "suvorova2": {
+            "title": "Улица Суворова (2)",
+            "type": "equirectangular",
+            "panorama": "./images/levo2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -88,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+             ]
+        },
+        "move_to_nikita_02": {
+            "title": "Спуск к отелю Никита",
+            "type": "equirectangular",
+            "panorama": "./images/никита.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Крыло младших классов",
+                    "sceneId": "move_to_nikita_01",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "hall": {
+            "title": "Холл",
+            "type": "equirectangular",
+            "panorama": "./images/hall.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 176,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 40,
+                    "type": "scene",
+                    "text": "Библиотека",
+                    "sceneId": "library",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 80,
+                    "type": "scene",
+                    "text": "Внутренний двор (1)",
+                    "sceneId": "dvor1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 113,
+                    "type": "scene",
+                    "text": "Крыло младших классов(1)",
+                    "sceneId": "kidright1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "kidright1": {
+            "title": "Крыло младших классов(1)",
+            "type": "equirectangular",
+            "panorama": "./images/kidsright1.jpg",
+             "hotSpots": [
+                {
+                    "pitch":0 ,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "hall",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Крыло младших классов(2)",
+                    "sceneId": "kidright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "kidright2": {
+            "title": "Крыло младших классов(2)",
+            "type": "equirectangular",
+            "panorama": "./images/kidsright2.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 187,
+                    "type": "scene",
+                    "text": "Крыло младших классов(1)",
+                    "sceneId": "kidright1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Медпункт",
+                    "sceneId": "medpunct",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+        "medpunct": {
+            "title": "Медпункт",
+            "type": "equirectangular",
+            "panorama": "./images/medpunct.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Крыло младших классов(2)",
+                    "sceneId": "kidright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "schoolspusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+         "medpunct": {
+            "title": "Медпункт",
+            "type": "equirectangular",
+            "panorama": "./images/medpunct.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Крыло младших классов(2)",
+                    "sceneId": "kidright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "schoolspusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        }, "schoolspusk": {
+            "title": "Спуск",
+            "type": "equirectangular",
+            "panorama": "./images/schoolspusk.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Медпункт",
+                    "sceneId": "medpunct",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+               "dvor1": {
+            "title": "Внутренний двор (1)",
+            "type": "equirectangular",
+            "panorama": "./images/enterdvor.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -10,
+                    "yaw": 188,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "hall",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                                {
+                    "pitch": 0,
+                    "yaw": 52,
+                    "type": "scene",
+                    "text": "Правая ветвь двора (1)",
+                    "sceneId": "dvorright1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(4)",
+                    "sceneId": "dvorleft4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 2,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Внутренний двор (2)",
+                    "sceneId": "dvor2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+                       "dvor2": {
+            "title": "Внутренний двор (2)",
+            "type": "equirectangular",
+            "panorama": "./images/dvor2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -35,
+                    "type": "scene",
+                    "text": "Внутренний двор (1)",
+                    "sceneId": "dvor1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": -5,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Внутренний двор (3)",
+                    "sceneId": "dvor3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+               "dvor3": {
+            "title": "Внутренний двор (3)",
+            "type": "equirectangular",
+            "panorama": "./images/dvor3.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Внутренний двор (2)",
+                    "sceneId": "dvor2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch":0,
+                    "yaw":10,
+                    "type": "scene",
+                    "text": "Внутренний двор (4)",
+                    "sceneId": "dvor4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -20,
+                    "type": "scene",
+                    "text": "Внутренний двор (5)",
+                    "sceneId": "dvor5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 50,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(2)",
+                    "sceneId": "dvorright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+              "dvor4": {
+            "title": "Внутренний двор(4)",
+            "type": "equirectangular",
+            "panorama": "./images/dvor4.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 178,
+                    "type": "scene",
+                    "text": "Внутренний двор (3)",
+                    "sceneId": "dvor3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -80,
+                    "type": "scene",
+                    "text": "Внутренний двор (5)",
+                    "sceneId": "dvor5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 120,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(2)",
+                    "sceneId": "dvorright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+              "dvor5": {
+            "title": "Внутренний двор(5)",
+            "type": "equirectangular",
+            "panorama": "./images/dvor5.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 130,
+                    "type": "scene",
+                    "text": "Внутренний двор (4)",
+                    "sceneId": "dvor4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Нижний центр двора",
+                    "sceneId": "dvorniz1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -80,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(1)",
+                    "sceneId": "dvorleft1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 178,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(2)",
+                    "sceneId": "dvorright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 210,
+                    "type": "scene",
+                    "text": "Внутренний двор (3)",
+                    "sceneId": "dvor3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorright1": {
+            "title": "Правая ветвь двора(1)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorright1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 187,
+                    "type": "scene",
+                    "text": "Внутренний двор (1)",
+                    "sceneId": "dvor1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -8,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(2)",
+                    "sceneId": "dvorright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+             "dvorright2": {
+            "title": "Правая ветвь двора(2)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorright2.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 170,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(1)",
+                    "sceneId": "dvorright1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -50,
+                    "type": "scene",
+                    "text": "Внутренний двор(4)",
+                    "sceneId": "dvor4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": -114,
+                    "type": "scene",
+                    "text": "Внутренний двор (3)",
+                    "sceneId": "dvor3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -80,
+                    "type": "scene",
+                    "text": "Внутренний двор (5)",
+                    "sceneId": "dvor5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 87,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(3)",
+                    "sceneId": "dvorright3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+            "dvorright3": {
+            "title": "Правая ветвь двора(3)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorright3.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 170,
+                    "type": "scene",
+                    "text": "Правая ветвь двора(2)",
+                    "sceneId": "dvorright2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+                "dvorleft1": {
+            "title": "Левая ветвь двора(1)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorleft1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 190,
+                    "type": "scene",
+                    "text": "Внутренний двор (5)",
+                    "sceneId": "dvor5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -7,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(2)",
+                    "sceneId": "dvorleft2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+                 "dvorleft2": {
+            "title": "Левая ветвь двора(2)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorleft2.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(1)",
+                    "sceneId": "dvorleft1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -4,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(3)",
+                    "sceneId": "dvorleft3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+              "dvorleft3": {
+            "title": "Левая ветвь двора(3)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorleft3.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 60,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(4)",
+                    "sceneId": "dvorleft4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -54,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(2)",
+                    "sceneId": "dvorleft2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorleft4": {
+            "title": "Левая ветвь двора(4)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorleft4.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -80,
+                    "type": "scene",
+                    "text": "Левая ветвь двора(3)",
+                    "sceneId": "dvorleft3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorniz3": {
+            "title": "Нижний центр двора (3)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz3.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 130,
+                    "type": "scene",
+                    "text": "Нижний центр двора",
+                    "sceneId": "dvorniz1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -136,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "spusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 200,
+                    "type": "scene",
+                    "text": "Нижний центр двора (2)",
+                    "sceneId": "dvorniz2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 5,
+                    "type": "scene",
+                    "text": "Правый нижний двор",
+                    "sceneId": "dvorniz4",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "dvorniz4": {
+            "title": "Правый нижний двор",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz4.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Нижний центр двора (3)",
+                    "sceneId": "dvorniz3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "sport1": {
+            "title": "Спортивная полщадка (1)",
+            "type": "equirectangular",
+            "panorama": "./images/sport1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Нижний центр двора (2)",
+                    "sceneId": "dvorniz2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorniz1": {
+            "title": "Нижний центр двора",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -130,
+                    "type": "scene",
+                    "text": "Внутренний двор(5)",
+                    "sceneId": "dvor5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "spusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "Нижний центр двора (3)",
+                    "sceneId": "dvorniz3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Нижний центр двора (2)",
+                    "sceneId": "dvorniz2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "dvorniz2": {
+            "title": "Нижний центр двора (2)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz2.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "Нижний центр двора",
+                    "sceneId": "dvorniz1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": -13,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "spusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Нижний центр двора (3)",
+                    "sceneId": "dvorniz3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Спортивная полщадка (1)",
+                    "sceneId": "sport1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "spusk": {
+            "title": "Спуск",
+            "type": "equirectangular",
+            "panorama": "./images/spusk.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 10,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Нижний центр двора",
+                    "sceneId": "dvorniz1",
+                    "targetYaw": 180,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": -10,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Нижний центр двора (5)",
+                    "sceneId": "dvorniz5",
+                    "targetYaw": 180,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 20,
+                    "yaw": -110,
+                    "type": "scene",
+                    "text": "Нижний центр двора (2)",
+                    "sceneId": "dvorniz2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 15,
+                    "yaw": 120,
+                    "type": "scene",
+                    "text": "Нижний центр двора (3)",
+                    "sceneId": "dvorniz3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": -10,
+                    "yaw": -50,
+                    "type": "scene",
+                    "text": "Нижний центр двора (6)",
+                    "sceneId": "dvorniz6",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorniz5": {
+            "title": "Нижний центр двора (5)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz5.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 5,
+                    "yaw": -86,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "spusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": -50,
+                    "type": "scene",
+                    "text": "Нижний центр двора (6)",
+                    "sceneId": "dvorniz6",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "dvorniz6": {
+            "title": "Нижний центр двора (6)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz6.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 5,
+                    "yaw": -106,
+                    "type": "scene",
+                    "text": "Спуск",
+                    "sceneId": "spusk",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 5,
+                    "yaw": -4,
+                    "type": "scene",
+                    "text": "Нижний центр двора (7)",
+                    "sceneId": "dvorniz7",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Нижний центр двора (5)",
+                    "sceneId": "dvorniz5",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "dvorniz7": {
+            "title": "Нижний центр двора (7)",
+            "type": "equirectangular",
+            "panorama": "./images/dvorniz7.jpg",
+             "hotSpots": [
+                 {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Нижний центр двора (6)",
+                    "sceneId": "dvorniz6",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Детская площадка",
+                    "sceneId": "ploshadka",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 70,
+                    "type": "scene",
+                    "text": "Спортивная полщадка (2)",
+                    "sceneId": "sport2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+         "sport2": {
+            "title": "Спортивная полщадка (2)",
+            "type": "equirectangular",
+            "panorama": "./images/sport2.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 145,
+                    "type": "scene",
+                    "text": "Нижний центр двора (7)",
+                    "sceneId": "dvorniz7",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+         "ploshadka": {
+            "title": "Детская полщадка",
+            "type": "equirectangular",
+            "panorama": "./images/ploshadka.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -20,
+                    "type": "scene",
+                    "text": "Нижний центр двора (7)",
+                    "sceneId": "dvorniz7",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "library": {
+            "title": "Библиотека",
+            "type": "equirectangular",
+            "panorama": "./images/library.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "hall",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Коридор",
+                    "sceneId": "koridor",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+         "koridor": {
+            "title": "Коридор",
+            "type": "equirectangular",
+            "panorama": "./images/koridor1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Библиотека",
+                    "sceneId": "library",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+            ]
+        },
+    }
+});
+</script>
+
+</body>
+</html>

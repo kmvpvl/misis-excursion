@@ -1,0 +1,219 @@
+{    "default": {
+        "firstScene": "central_enter",
+        "author": "Даша Косолапова",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "central_enter": {
+            "title": "Центральный вход",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "type": "equirectangular",
+            "panorama": "./images/входвшколу.jpg",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 85,
+                    "type": "scene",
+                    "text": "Крыло младших классов",
+                    "sceneId": "move_to_nikita_01"
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 310,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 265,
+                    "type": "scene",
+                    "text": "Церковь",
+                    "sceneId": "tserchov",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "move_to_nikita_01": {
+            "title": "Крыло младших классов",
+            "type": "equirectangular",
+            "panorama": "./images/детскоекрыло.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 5,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "hall",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": -7,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Спуск к отелю Никита",
+                    "sceneId": "move_to_nikita_02",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "tserchov": {
+            "title": "Церковь",
+            "type": "equirectangular",
+            "panorama": "./images/церковь.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 2,
+                    "yaw": -14,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+        "suvorova1": {
+            "title": "Улица Суворова (1)",
+            "type": "equirectangular",
+            "panorama": "./images/levo1.jpg",
+             "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 87,
+                    "type": "scene",
+                    "text": "Церковь",
+                    "sceneId": "tserchov",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                 {
+                    "pitch": 0,
+                    "yaw": 67,
+                    "type": "scene",
+                    "text": "",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 3,
+                    "yaw": -84,
+                    "type": "scene",
+                    "text": "Улица Суворова (2)",
+                    "sceneId": "suvorova2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+             ]
+        },
+        "suvorova2": {
+            "title": "Улица Суворова (2)",
+            "type": "equirectangular",
+            "panorama": "./images/levo2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -88,
+                    "type": "scene",
+                    "text": "Улица Суворова (1)",
+                    "sceneId": "suvorova1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+             ]
+        },
+        "move_to_nikita_02": {
+            "title": "Спуск к отелю Никита",
+            "type": "equirectangular",
+            "panorama": "./images/никита.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Крыло младших классов",
+                    "sceneId": "move_to_nikita_01",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        },
+        "hall": {
+            "title": "Холл",
+            "type": "equirectangular",
+            "panorama": "./images/point_01.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Центральный вход",
+                    "sceneId": "central_enter",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 2,
+                    "yaw": -14,
+                    "type": "scene",
+                    "text": "Внутренний двор (1)",
+                    "sceneId": "dvor1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+
+               "dvor1": {
+            "title": "Внутренний двор (1)",
+            "type": "equirectangular",
+            "panorama": "./images/enterdvor.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "Холл",
+                    "sceneId": "",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 2,
+                    "yaw": -14,
+                    "type": "scene",
+                    "text": "Внутренний двор (2)",
+                    "sceneId": "suvorova2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        }
+    }
+}
